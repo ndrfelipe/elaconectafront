@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Busca com Filtro e Sugestões</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            width: 18rem;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mb-4">Sistema de Busca</h1>
+        <!-- Barra de Pesquisa -->
+        <input type="text" id="searchInput" class="form-control mb-4" placeholder="Digite um serviço..." onkeyup="filterCards()">
+        
+        <!-- Mensagem de "Mais Pesquisados" -->
+        <div id="mostSearched" class="mb-4">
+            <h4>Mais pesquisados:</h4>
+            <div class="card-container" id="popularCardContainer">
+                <!-- Cards mais acessados -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Fazer uma Denúncia</h5>
+                        <p class="card-text">Saiba como fazer uma denúncia formal.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Registrar uma Ocorrência</h5>
+                        <p class="card-text">Guia para registrar uma ocorrência policial.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Agendar Consulta</h5>
+                        <p class="card-text">Como agendar uma consulta médica online.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contêiner de Cards que serão filtrados -->
+        <div class="card-container hidden" id="cardContainer">
+            <!-- Todos os cards para serem filtrados -->
+            <div class="card" data-category="Segurança">
+                <div class="card-body">
+                    <h5 class="card-title">Fazer uma Denúncia</h5>
+                    <p class="card-text">Saiba como fazer uma denúncia formal.</p>
+                    <a href="#" class="btn btn-primary">Ir para página</a>
+                </div>
+            </div>
+            <div class="card" data-category="Segurança">
+                <div class="card-body">
+                    <h5 class="card-title">Registrar uma Ocorrência</h5>
+                    <p class="card-text">Guia para registrar uma ocorrência policial.</p>
+                    <a href="#" class="btn btn-primary">Ir para página</a>
+                </div>
+            </div>
+            <div class="card" data-category="Educação">
+                <div class="card-body">
+                    <h5 class="card-title">Cursos Online</h5>
+                    <p class="card-text">Explore cursos online gratuitos.</p>
+                    <a href="#" class="btn btn-primary">Ir para página</a>
+                </div>
+            </div>
+            <div class="card" data-category="Saúde">
+                <div class="card-body">
+                    <h5 class="card-title">Agendar Consulta</h5>
+                    <p class="card-text">Como agendar uma consulta médica online.</p>
+                    <a href="#" class="btn btn-primary">Ir para página</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script de Filtro -->
+    <script>
+        function filterCards() {
+            // Captura o valor da barra de pesquisa
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+            const cards = document.querySelectorAll("#cardContainer .card");
+            const cardContainer = document.getElementById("cardContainer");
+            const mostSearched = document.getElementById("mostSearched");
+
+            // Se a barra de pesquisa estiver vazia, mostra "Mais pesquisados" e esconde os cards filtrados
+            if (searchInput === "") {
+                cardContainer.classList.add("hidden");
+                mostSearched.classList.remove("hidden");
+                return;
+            }
+
+            // Caso contrário, filtra os cards
+            let hasVisibleCard = false;
+            cards.forEach(card => {
+                const title = card.querySelector(".card-title").textContent.toLowerCase();
+                const category = card.getAttribute("data-category").toLowerCase();
+
+                // Verifica se o título ou a categoria correspondem ao valor da busca
+                if (title.includes(searchInput) || category.includes(searchInput)) {
+                    card.style.display = "block";
+                    hasVisibleCard = true;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Exibe ou oculta os contêineres apropriados
+            if (hasVisibleCard) {
+                cardContainer.classList.remove("hidden");
+                mostSearched.classList.add("hidden");
+            } else {
+                cardContainer.classList.add("hidden");
+                mostSearched.classList.remove("hidden");
+            }
+        }
+    </script>
+
+</body>
+</html>

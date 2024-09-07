@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "IBM Plex Sans", Tahoma, sans-serif ;
+}
+
+main{
+    width: 100dvw;
+    height: 100dvh;
+}
+
+
+h2{
+    font-size: 2rem;
+}
+p{
+    font-size: 1.2rem;
+}
+
+
+
+#logo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+@media (max-width: 780px) {
+    #logo{
+        margin-left: -1rem;
+    }
+}
+
+.inline{
+    margin: 0 0 0 1rem;
+    align-self: center;
+    color: white;
+}
+
+
+#navbar{
+    background: linear-gradient(90deg, #D34A58 0%, #A64C6E 41.25%, #664F8D 100%);
+}
+
+.talktomaria{
+    text-decoration: none;
+    color: white;
+}
+
+.talktomaria:hover{
+    text-decoration: none;
+    color: white;
+}
+
+/* HOME*/

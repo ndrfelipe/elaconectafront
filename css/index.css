@@ -1,0 +1,28 @@
+*{
+    color: white;
+}
+
+#main{
+    background: linear-gradient(180deg, #D34A58 0%, #A64C6E 41.25%, #664F8D 100%);
+}
+
+#conteudo-central{
+    padding: 1rem;
+    width: 80%;
+    border-radius: 2rem;
+}
+
+.descricao-botao{
+    margin-top: 2rem;
+}
+
+.botao{
+    text-decoration: none;
+    height: 30px;
+    border: 0px;
+    border-radius: 1rem;
+}
+
+img{
+    width: 220px;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElaConecta</title>
+
+    
+    <!--CSS Animation-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/9e0cddc9f5.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/global.css">
+</head>
+<body>
+    <main>  
+         <nav class="navbar" id="navbar">
+            <div class="container-fluid" id="div">
+              <a class="navbar-brand" id="logo" href="index.html">
+                <img src="img/maria-removebg-preview.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+                <span class="inline">ElaConecta</span>
+              </a>
+            </div>
+          </nav>
+          
+          <div class="d-flex justify-content-center my-2">
+            <button class="btn btn-dark btn-large my-3">
+                <a class="talktomaria" href="http://" target="_blank" ">Falar com Maria</a>
+              </button>
+          </div>
+
+          <div class="container">
+            <!-- Barra de Pesquisa -->
+            <input type="text" id="searchInput" class="form-control mb-4" placeholder="Digite um serviço..." onkeyup="filterCards()">
+            
+            <!-- Mensagem de "Mais Pesquisados" -->
+            <div id="mostSearched" class="mb-4">
+                <h4>Mais pesquisados:</h4>
+                <div class="card-container" id="popularCardContainer">
+                    <!-- Cards mais acessados -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ouvidoria da mulher</h5>
+                            <p class="card-text">acolhimento de sugestões, solicitações, elogios, reclamações e denúncias</p>
+                            <a href="servicos/ouvidoria.html" class="btn btn-primary">Ir para página</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar uma Ocorrência</h5>
+                            <p class="card-text">Guia para registrar uma ocorrência policial.</p>
+                            <a href="#" class="btn btn-primary">Ir para página</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Qualificação profissional</h5>
+                            <p class="card-text">Apoio à Qualificação Para o Emprego.</p>
+                            <a href="#" class="btn btn-primary">Ir para página</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Documentação e cidadania para as mulheres</h5>
+                            <p class="card-text">Campanha Nenhuma Pernambucana sem Documento.</p>
+                            <a href="#" class="btn btn-primary">Ir para página</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Contêiner de Cards que serão filtrados -->
+            <div class="card-container hidden" id="cardContainer">
+                <!-- Todos os cards para serem filtrados -->
+                
+                    <div class="card" data-category="Segurança">
+                        <div class="card-body">
+                            <h5 class="card-title">Ouvidoria da mulher</h5>
+                            <p class="card-text">acolhimento de sugestões, solicitações, elogios, reclamações e denúncias</p>
+                            <a href="servicos/ouvidoria.html" class="btn btn-primary">Ir para página</a>
+                        </div>
+                    </div>
+                <div class="card" data-category="Segurança">
+                    <div class="card-body">
+                        <h5 class="card-title">Fazer uma Denúncia</h5>
+                        <p class="card-text">Saiba como fazer uma denúncia formal.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+
+                <div class="card" data-category="Segurança">
+                    <div class="card-body">
+                        <h5 class="card-title">Serviço de Proteção</h5>
+                        <p class="card-text">Atendimento e Abrigamento às Mulheres em Situação de Violência Doméstica e Familiar sob Risco de Morte.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+
+                <div class="card" data-category="Segurança">
+                    <div class="card-body">
+                        <h5 class="card-title">Registrar uma Ocorrência</h5>
+                        <p class="card-text">Guia para registrar uma ocorrência policial.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+                <div class="card" data-category="Educação">
+                    <div class="card-body">
+                        <h5 class="card-title">Cursos Online</h5>
+                        <p class="card-text">Explore cursos online gratuitos.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+
+
+                <div class="card" data-category="Educação">
+                    <div class="card-body">
+                        <h5 class="card-title">Qualificação profissional</h5>
+                        <p class="card-text">Apoio à Qualificação Para o Emprego.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+                <div class="card" data-category="Saúde">
+                    <div class="card-body">
+                        <h5 class="card-title">Agendar Consulta</h5>
+                        <p class="card-text">Como agendar uma consulta médica online.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+                <div class="card" data-category="Documentação">
+                    <div class="card-body">
+                        <h5 class="card-title">Documentação e cidadania para as mulheres</h5>
+                        <p class="card-text">Campanha Nenhuma Pernambucana sem Documento.</p>
+                        <a href="#" class="btn btn-primary">Ir para página</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      
+    </main>
+        
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="index.js">
+    </script>
+</body>
+</html>

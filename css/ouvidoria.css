@@ -1,0 +1,29 @@
+
+
+
+#navbar{
+    background: linear-gradient(90deg, #D34A58 0%, #A64C6E 41.25%, #664F8D 100%);
+    color: white;
+}
+
+
+#central-ouvidoria{
+    padding: 1rem;
+    
+}
+
+.cidada_pernambucana{
+    background: linear-gradient(90deg, #D34A58 0%, #A64C6E 41.25%, #664F8D 100%);
+    padding: 4px;
+    border-radius: 20px;
+    color: white;
+}
+
+.centralizar{
+    text-align: center;
+}
+
+.card {
+    border: 3px solid #664F8D;
+    border-bottom: 10px solid #664F8D;
+}
