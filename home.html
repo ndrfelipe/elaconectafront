@@ -21,8 +21,8 @@
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/global.css">
 </head>
 <body>
     <main>  
@@ -37,7 +37,7 @@
           
           <div class="d-flex justify-content-center my-2">
             <button class="btn btn-dark btn-large my-3">
-                <a class="talktomaria" href="http://" target="_blank" ">Falar com Maria</a>
+                <a class="talktomaria" href="https://wa.me//558191435045?text=Olá,%20você%20poderia%20me%20ajudar?" target="_blank">Falar com Maria</a>
               </button>
           </div>
 
@@ -45,38 +45,51 @@
             <!-- Barra de Pesquisa -->
             <input type="text" id="searchInput" class="form-control mb-4" placeholder="Digite um serviço..." onkeyup="filterCards()">
             
+
+            <style>
+    .card-grid{
+        display: grid;
+    }
+
+    @media (min-width: 1080px) {
+        .card-grid {
+            grid-template-columns: 1fr 1fr; 
+        }
+    }
+</style>
+            </style>
+
             <!-- Mensagem de "Mais Pesquisados" -->
             <div id="mostSearched" class="mb-4">
                 <h4>Mais pesquisados:</h4>
-                <div class="card-container" id="popularCardContainer">
+                <div class="card-container card-grid "  id="popularCardContainer">
                     <!-- Cards mais acessados -->
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Ouvidoria da mulher</h5>
                             <p class="card-text">acolhimento de sugestões, solicitações, elogios, reclamações e denúncias</p>
-                            <a href="servicos/ouvidoria.html" class="btn btn-primary">Ir para página</a>
+                            <a href="servicos/ouvidoria.html" class="btn btn-primary">Saber mais</a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Registrar uma Ocorrência</h5>
                             <p class="card-text">Guia para registrar uma ocorrência policial.</p>
-                            <a href="#" class="btn btn-primary">Ir para página</a>
+                            <a href="#" class="btn btn-primary">Saber mais</a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Qualificação profissional</h5>
                             <p class="card-text">Apoio à Qualificação Para o Emprego.</p>
-                            <a href="#" class="btn btn-primary">Ir para página</a>
+                            <a href="#" class="btn btn-primary">Saber mais</a>
                         </div>
                     </div>
-
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Documentação e cidadania para as mulheres</h5>
                             <p class="card-text">Campanha Nenhuma Pernambucana sem Documento.</p>
-                            <a href="#" class="btn btn-primary">Ir para página</a>
+                            <a href="#" class="btn btn-primary">Saber mais</a>
                         </div>
                     </div>
                 </div>
@@ -90,14 +103,14 @@
                         <div class="card-body">
                             <h5 class="card-title">Ouvidoria da mulher</h5>
                             <p class="card-text">acolhimento de sugestões, solicitações, elogios, reclamações e denúncias</p>
-                            <a href="servicos/ouvidoria.html" class="btn btn-primary">Ir para página</a>
+                            <a href="servicos/ouvidoria.html" class="btn btn-primary">Saber mais</a>
                         </div>
                     </div>
                 <div class="card" data-category="Segurança">
                     <div class="card-body">
                         <h5 class="card-title">Fazer uma Denúncia</h5>
                         <p class="card-text">Saiba como fazer uma denúncia formal.</p>
-                        <a href="#" class="btn btn-primary">Ir para página</a>
+                        <a href="#" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
 
@@ -105,7 +118,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Serviço de Proteção</h5>
                         <p class="card-text">Atendimento e Abrigamento às Mulheres em Situação de Violência Doméstica e Familiar sob Risco de Morte.</p>
-                        <a href="#" class="btn btn-primary">Ir para página</a>
+                        <a href="servicos/protecao.html" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
 
@@ -113,14 +126,14 @@
                     <div class="card-body">
                         <h5 class="card-title">Registrar uma Ocorrência</h5>
                         <p class="card-text">Guia para registrar uma ocorrência policial.</p>
-                        <a href="#" class="btn btn-primary">Ir para página</a>
+                        <a href="#" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
                 <div class="card" data-category="Educação">
                     <div class="card-body">
                         <h5 class="card-title">Cursos Online</h5>
                         <p class="card-text">Explore cursos online gratuitos.</p>
-                        <a href="#" class="btn btn-primary">Ir para página</a>
+                        <a href="#" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
 
@@ -129,21 +142,21 @@
                     <div class="card-body">
                         <h5 class="card-title">Qualificação profissional</h5>
                         <p class="card-text">Apoio à Qualificação Para o Emprego.</p>
-                        <a href="#" class="btn btn-primary">Ir para página</a>
+                        <a href="#" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
                 <div class="card" data-category="Saúde">
                     <div class="card-body">
                         <h5 class="card-title">Agendar Consulta</h5>
                         <p class="card-text">Como agendar uma consulta médica online.</p>
-                        <a href="#" class="btn btn-primary">Ir para página</a>
+                        <a href="#" class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
                 <div class="card" data-category="Documentação">
                     <div class="card-body">
                         <h5 class="card-title">Documentação e cidadania para as mulheres</h5>
                         <p class="card-text">Campanha Nenhuma Pernambucana sem Documento.</p>
-                        <a href="#" class="btn btn-primary">Ir para página</a>
+                        <a href="https://wa.me//5581993531750?text=Vi%20o%20seu%20portfólio%20e%20gostaria%20de%20conversar." class="btn btn-primary">Saber mais</a>
                     </div>
                 </div>
                 
